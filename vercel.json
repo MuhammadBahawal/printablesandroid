@@ -11,12 +11,12 @@
       "destination": "/printable/about.html"
     },
     {
-      "source": "/contact",
-      "destination": "/printable/contact.html"
+      "source": "/support",
+      "destination": "/printable/support.html"
     },
     {
-      "source": "/support",
-      "destination": "/printable/contact.html"
+      "source": "/contact",
+      "destination": "/printable/support.html"
     },
     {
       "source": "/privacy",

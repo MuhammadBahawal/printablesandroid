@@ -1287,6 +1287,120 @@ section.wrap {
 }
 
 /* ====================================================================
+   SUCCESS MODAL POPUP (MESSAGE SENT POPUP)
+   ==================================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(3, 8, 6, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background: #0d1b15;
+  border: 1px solid rgba(158, 248, 173, 0.35);
+  border-radius: 24px;
+  max-width: 460px;
+  width: 100%;
+  padding: clamp(1.8rem, 4vw, 2.4rem);
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(158, 248, 173, 0.15);
+  transform: scale(0.92) translateY(12px);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.modal-backdrop.open .modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.modal-icon-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(158, 248, 173, 0.12);
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.3rem;
+  box-shadow: 0 0 24px rgba(158, 248, 173, 0.35);
+  animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0 0 0.8rem;
+}
+
+.modal-desc {
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  margin: 0 0 1.2rem;
+}
+.modal-desc strong {
+  color: #fff;
+}
+
+.modal-meta {
+  background: rgba(21, 38, 32, 0.7);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  margin-bottom: 1.6rem;
+}
+
+.modal-ticket-label {
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.modal-meta code {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-family: monospace;
+}
+
+.modal-btn {
+  width: 100%;
+  padding: 0.85rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ====================================================================
    HELP CENTER & FAQ PAGE
    ==================================================================== */
 .help-hero-block {

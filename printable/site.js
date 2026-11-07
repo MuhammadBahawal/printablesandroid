@@ -83,11 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const result = await response.json();
 
         if (response.ok && result.success) {
-          // Success!
-          showFormAlert(
-            'success',
-            `<strong>Message Delivered!</strong> ${result.message} <br><small>Ticket Reference: <code>${result.data?.id || 'Received'}</code></small>`
-          );
+          // Clear any inline alert
+          if (formStatusContainer) formStatusContainer.innerHTML = '';
+
+          // Show popup modal for message sent!
+          showSuccessModal({
+            id: result.data?.id || 'Received',
+            message: result.message
+          });
+
           contactForm.reset();
           const appNameInput = document.getElementById('app-name');
           if (appNameInput) appNameInput.value = 'Printable AI 3D model Generator';
@@ -105,6 +109,69 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;
       }
+    });
+  }
+
+  // Success Popup Modal implementation
+  function showSuccessModal({ id, message }) {
+    let modal = document.getElementById('success-modal');
+    if (!modal) {
+      const modalHtml = `
+        <div class="modal-backdrop" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+          <div class="modal-card">
+            <div class="modal-icon-circle">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3 id="modal-title" class="modal-title">Message Sent Successfully!</h3>
+            <p class="modal-desc" id="modal-desc">
+              Thank you! Your message has been sent directly to our support team at <strong>techtornix@gmail.com</strong>. We have also sent a confirmation to your email.
+            </p>
+            <div class="modal-meta" id="modal-meta">
+              <span class="modal-ticket-label">Ticket ID:</span>
+              <code id="modal-ticket-id">${id || 'Received'}</code>
+            </div>
+            <button type="button" class="button button-primary modal-btn" id="modal-close-btn">
+              Got it, thanks!
+            </button>
+          </div>
+        </div>
+      `;
+      document.body.insertAdjacentHTML('beforeend', modalHtml);
+      modal = document.getElementById('success-modal');
+
+      const closeModal = () => {
+        modal.classList.remove('open');
+        setTimeout(() => {
+          modal.style.display = 'none';
+        }, 280);
+      };
+
+      // Click outside to close
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      // Close on button
+      const closeBtn = document.getElementById('modal-close-btn');
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+          closeModal();
+        }
+      });
+    }
+
+    const ticketElem = document.getElementById('modal-ticket-id');
+    if (ticketElem && id) ticketElem.textContent = id;
+
+    // Show modal with animation
+    modal.style.display = 'flex';
+    requestAnimationFrame(() => {
+      modal.classList.add('open');
     });
   }
 

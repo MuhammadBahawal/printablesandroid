@@ -6,10 +6,15 @@ const nodemailer = require('nodemailer');
  */
 const getTransporter = () => {
   const user = process.env.EMAIL_USER;
-  const pass = process.env.EMAIL_PASS;
+  let pass = process.env.EMAIL_PASS;
 
   if (!user || !pass) {
     return null;
+  }
+
+  // Strip spaces, dashes, or underscores (e.g. from Google 16-character App Passwords)
+  if (typeof pass === 'string') {
+    pass = pass.replace(/[\s_-]/g, '');
   }
 
   // If using standard host & port

@@ -16,15 +16,18 @@ app.use('/api', contactRoutes);
 // Static frontend files from 'printable' directory
 const staticPath = path.join(__dirname, '..', 'printable');
 app.use(express.static(staticPath));
+app.use('/printable', express.static(staticPath));
 
-// Clean URL route mappings
-app.get('/', (req, res) => res.sendFile(path.join(staticPath, 'index.html')));
-app.get('/about', (req, res) => res.sendFile(path.join(staticPath, 'about.html')));
-app.get('/contact', (req, res) => res.sendFile(path.join(staticPath, 'contact.html')));
-app.get('/support', (req, res) => res.sendFile(path.join(staticPath, 'contact.html')));
-app.get('/privacy', (req, res) => res.sendFile(path.join(staticPath, 'privacy.html')));
-app.get('/terms', (req, res) => res.sendFile(path.join(staticPath, 'terms.html')));
-app.get('/admin', (req, res) => res.sendFile(path.join(staticPath, 'admin.html')));
+// Clean URL route mappings & rewrites
+const sendPage = (pageName) => (req, res) => res.sendFile(path.join(staticPath, pageName));
+
+app.get(['/', '/index', '/index.html', '/printable/index.html'], sendPage('index.html'));
+app.get(['/about', '/about.html', '/printable/about.html'], sendPage('about.html'));
+app.get(['/contact', '/contact.html', '/printable/contact.html', '/support', '/printable/support'], sendPage('contact.html'));
+app.get(['/privacy', '/privacy.html', '/printable/privacy.html'], sendPage('privacy.html'));
+app.get(['/terms', '/terms.html', '/printable/terms.html'], sendPage('terms.html'));
+app.get(['/thanks', '/thanks.html', '/printable/thanks.html'], sendPage('thanks.html'));
+app.get(['/admin', '/admin.html', '/printable/admin.html'], sendPage('admin.html'));
 
 // 404 Handler for undefined API routes
 app.use('/api', (req, res) => {

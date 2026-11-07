@@ -7,3 +7,4 @@ module.exports = (req, res) => {
     emailRecipient: process.env.ADMIN_EMAIL || 'techtornix@gmail.com',
   });
 };
+

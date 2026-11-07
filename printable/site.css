@@ -63,11 +63,24 @@ img {
   display: block;
 }
 
-/* Page Container Wrap */
+/* Page Container Wrap (Constrained & Centered) */
 .wrap {
-  width: min(var(--wrap), calc(100% - 48px));
+  width: min(var(--wrap), calc(100% - clamp(32px, 5vw, 64px)));
+  max-width: var(--wrap);
   margin-inline: auto;
   position: relative;
+  box-sizing: border-box;
+}
+
+/* Guard: Prevent any combined classes from breaking .wrap */
+.wrap.app-hero,
+.wrap.bento-section,
+.wrap.page,
+main.wrap,
+section.wrap {
+  width: min(var(--wrap), calc(100% - clamp(32px, 5vw, 64px))) !important;
+  max-width: var(--wrap) !important;
+  margin-inline: auto !important;
 }
 
 .skip {
@@ -227,7 +240,6 @@ img {
   position: relative;
   padding-top: clamp(2.5rem, 5vw, 4.5rem);
   padding-bottom: clamp(3rem, 6vw, 5.5rem);
-  width: 100%;
 }
 
 .hero-glow-backdrop {
@@ -584,7 +596,6 @@ img {
 .bento-section {
   padding-block: clamp(3.5rem, 7vw, 6.5rem);
   border-top: 1px solid var(--line);
-  width: 100%;
 }
 .bento-grid {
   display: grid;
@@ -1164,10 +1175,17 @@ img {
   color: #b3d9ff;
 }
 
-.page {
+.page,
+.page-main {
   min-height: 72vh;
   padding-block: clamp(2.5rem, 6vw, 5rem);
   width: 100%;
+}
+
+.page-inner {
+  width: min(var(--wrap), calc(100% - clamp(32px, 5vw, 64px)));
+  max-width: var(--wrap);
+  margin-inline: auto;
 }
 
 .eyebrow {

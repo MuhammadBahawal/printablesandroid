@@ -23,6 +23,7 @@ const sendPage = (pageName) => (req, res) => res.sendFile(path.join(staticPath, 
 
 app.get(['/', '/index', '/index.html', '/printable/index.html'], sendPage('index.html'));
 app.get(['/about', '/about.html', '/printable/about.html'], sendPage('about.html'));
+app.get(['/help', '/help.html', '/printable/help.html'], sendPage('help.html'));
 app.get(['/support', '/support.html', '/printable/support.html', '/contact', '/contact.html', '/printable/contact.html'], sendPage('support.html'));
 app.get(['/privacy', '/privacy.html', '/printable/privacy.html'], sendPage('privacy.html'));
 app.get(['/terms', '/terms.html', '/printable/terms.html'], sendPage('terms.html'));

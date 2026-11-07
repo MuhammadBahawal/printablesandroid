@@ -11,6 +11,10 @@
       "destination": "/printable/about.html"
     },
     {
+      "source": "/help",
+      "destination": "/printable/help.html"
+    },
+    {
       "source": "/support",
       "destination": "/printable/support.html"
     },

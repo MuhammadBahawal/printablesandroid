@@ -2,10 +2,6 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.js"
-    },
-    {
       "source": "/about",
       "destination": "/printable/about.html"
     },
@@ -52,10 +48,6 @@
     {
       "source": "/",
       "destination": "/printable/index.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/api/index.js"
     }
   ]
 }

@@ -1,0 +1,28 @@
+{
+  "name": "printables-ai-3d-model-generator",
+  "version": "1.0.0",
+  "description": "Printables AI 3D Model Generator - Official Website with Direct Nodemailer Support",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "printables",
+    "ai",
+    "3d-model",
+    "generator",
+    "android",
+    "nodemailer",
+    "express"
+  ],
+  "author": "TechTornix",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemailer": "^10.3.1"
+  }
+}

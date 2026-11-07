@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Printable - AI 3D Model Generator for Android</title>
+  <meta name="description" content="Turn prompts, photos, and sketches into production-ready 3D models with Printable for Android. Real-time 360° inspector, watertight geometry, and GLB export.">
+  <meta name="theme-color" content="#070e0c">
+  <link rel="icon" href="assets/printable.svg">
+  <link rel="stylesheet" href="site.css">
+  <script src="site-config.js" defer></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Header & Navigation Bar -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/printable.svg" width="38" height="38" alt="Printable Logo">
+        <span>Printable</span>
+        <span class="brand-tag">3D AI</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Navbar: Home, About, Privacy Policy, Terms & Conditions, Support (Last Tab) -->
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="contact.html" class="nav-support-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Support
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Ambient Glow Backdrop -->
+    <div class="hero-glow-backdrop" aria-hidden="true"></div>
+
+    <!-- ==========================================
+         HERO SECTION
+         ========================================== -->
+    <section class="app-hero wrap">
+      <div class="app-hero-grid">
+        <div class="hero-text-col">
+          <div class="hero-pill-badge">
+            <span class="pulsing-dot"></span>
+            AI 3D Model Generator • Android Edition
+          </div>
+
+          <h1>
+            From Idea to <span class="gradient-text">3D Model</span> in Seconds.
+          </h1>
+
+          <p class="hero-lead">
+            Turn any text prompt, reference photo, or 2D sketch into watertight, production-ready 3D models. Inspect in real-time 360° and export directly for 3D printing and game engines.
+          </p>
+
+          <div class="hero-cta-group">
+            <!-- Google Play Store Button -->
+            <a class="play-store-btn" href="#download" data-play-store>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <div class="play-btn-text">
+                <span class="play-btn-sub">GET IT ON</span>
+                <span class="play-btn-title">Google Play</span>
+              </div>
+            </a>
+
+            <a class="button button-secondary" href="#showcase">
+              <span>View 3D Showcase</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <span class="hero-stat-value">⭐ 4.8 / 5.0</span>
+              <span class="hero-stat-label">User Rating on Google Play</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-value">.GLB / .OBJ</span>
+              <span class="hero-stat-label">Universal 3D Export</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-value">100% Manifold</span>
+              <span class="hero-stat-label">Slicer &amp; 3D Print Ready</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Phone Mockup Display -->
+        <div class="hero-phone-wrap">
+          <div class="phone-mockup-frame">
+            <img class="phone-screen-img" src="assets/hooded_assassin_mobile_3d_view.png" alt="Printable App Screen showing Hooded Assassin 3D model" fetchpriority="high">
+          </div>
+
+          <div class="floating-badge floating-badge-top">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+            <span>360° Realtime Orbit</span>
+          </div>
+
+          <div class="floating-badge floating-badge-bottom">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            <span>Watertight Mesh Ready</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         COMPATIBILITY / SLICERS STRIP
+         ========================================== -->
+    <section class="compat-section">
+      <div class="wrap">
+        <p class="compat-title">Seamlessly Compatible With Industry Slicers &amp; 3D Suites</p>
+        <div class="compat-badges">
+          <span class="compat-tag">⚡ UltiMaker Cura</span>
+          <span class="compat-tag">🖨️ Bambu Studio</span>
+          <span class="compat-tag">⚙️ PrusaSlicer</span>
+          <span class="compat-tag">🎨 Blender 3D</span>
+          <span class="compat-tag">🎮 Unreal Engine 5</span>
+          <span class="compat-tag">🕹️ Unity</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         APP SHOWCASE SECTION: Real 3D Characters
+         ========================================== -->
+    <section class="app-showcase-section" id="showcase">
+      <div class="wrap">
+        <div class="section-badge-center">
+          <span class="eyebrow">Real App Showcase</span>
+          <h2>Explore High-Fidelity 3D Assets.</h2>
+          <p>These models were generated and inspected entirely on an Android smartphone using Printable's neural AI pipeline.</p>
+        </div>
+
+        <div class="mobile-showcase-grid">
+          <!-- Model 1: Hooded Assassin -->
+          <article class="showcase-card">
+            <div class="showcase-phone-container">
+              <img src="assets/hooded_assassin_mobile_3d_view.png" alt="Hooded Assassin in Printable 3D Mobile Inspector" loading="lazy">
+            </div>
+            <div class="showcase-card-body">
+              <span class="card-number">01 / TEXT-TO-3D</span>
+              <h3>Hooded Assassin</h3>
+              <p class="showcase-prompt-text">
+                Generated from text prompt: <em>"Grim rogue assassin in layered cowl, leather harness belts, boots &amp; dual scabbards."</em>
+              </p>
+              <div class="showcase-spec-pills">
+                <span class="spec-pill">42.5k Polygons</span>
+                <span class="spec-pill">Watertight Shell</span>
+                <span class="spec-pill">GLB Ready</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Model 2: Soldier Operator -->
+          <article class="showcase-card">
+            <div class="showcase-phone-container">
+              <img src="assets/soldier_operator_mobile_3d_view.png" alt="Soldier Operator in Printable 3D Mobile Inspector" loading="lazy">
+            </div>
+            <div class="showcase-card-body">
+              <span class="card-number">02 / PHOTO-TO-3D</span>
+              <h3>Soldier Operator</h3>
+              <p class="showcase-prompt-text">
+                Generated from reference image: <em>Tactical combat operative equipped with loadout vest, walkie-talkie &amp; reinforced knee pads.</em>
+              </p>
+              <div class="showcase-spec-pills">
+                <span class="spec-pill">38.2k Polygons</span>
+                <span class="spec-pill">PBR Topology</span>
+                <span class="spec-pill">Slicer Tested</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Model 3: Female Adventurer -->
+          <article class="showcase-card">
+            <div class="showcase-phone-container">
+              <img src="assets/female_adventurer_mobile_3d_view.png" alt="Female Adventurer in Printable 3D Mobile Inspector" loading="lazy">
+            </div>
+            <div class="showcase-card-body">
+              <span class="card-number">03 / SKETCH-TO-3D</span>
+              <h3>Female Adventurer</h3>
+              <p class="showcase-prompt-text">
+                Generated from character line drawing: <em>Stylized explorer hero with high ponytail, holster strap, cargo pants, and utility gear.</em>
+              </p>
+              <div class="showcase-spec-pills">
+                <span class="spec-pill">46.1k Polygons</span>
+                <span class="spec-pill">Clean Normals</span>
+                <span class="spec-pill">Rig-Ready Mesh</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Mobile 3D Inspector Feature Strip -->
+        <div class="inspector-strip">
+          <div>
+            <span class="eyebrow">Mobile 3D Studio</span>
+            <h3 style="font-size: clamp(1.6rem, 3.5vw, 2.3rem); margin: 0 0 1rem;">Complete Control with the 3D Inspector.</h3>
+            <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.65; margin: 0 0 1.5rem;">
+              Don't wait until you're at your computer. Inspect meshes directly inside the app with full hardware-accelerated touch gestures.
+            </p>
+            <a class="button button-primary" href="#download">Download Android App ↗</a>
+          </div>
+
+          <div class="inspector-controls-list">
+            <div class="inspector-item">
+              <div class="inspector-item-icon">🔄</div>
+              <h4>360° Smooth Orbit</h4>
+              <p>Touch and drag to rotate your model at any azimuth and elevation angle in real-time.</p>
+            </div>
+            <div class="inspector-item">
+              <div class="inspector-item-icon">✋</div>
+              <h4>Two-Finger Pan</h4>
+              <p>Reposition and pan along the viewport axes to inspect joints, overhangs, and recessed details.</p>
+            </div>
+            <div class="inspector-item">
+              <div class="inspector-item-icon">🔍</div>
+              <h4>Pinch Zoom</h4>
+              <p>Zoom in close to check surface smoothness, vertex alignment, and small feature clarity.</p>
+            </div>
+            <div class="inspector-item">
+              <div class="inspector-item-icon">📐</div>
+              <h4>Wireframe &amp; Layers</h4>
+              <p>Switch between solid textured, unlit wireframe, and normal maps before sending to slicers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         THREE GENERATION MODES (BENTO GRID)
+         ========================================== -->
+    <section class="bento-section wrap" id="tools">
+      <div class="section-badge-center">
+        <span class="eyebrow">Creation Pipeline</span>
+        <h2>Three Ways to Create. Boundless Possibilities.</h2>
+        <p>Pick the input method that best fits your workflow, whether you're sketching on paper or typing an idea.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Card 1: Text Prompt -->
+        <div class="bento-card">
+          <div class="bento-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3>01. Text to 3D</h3>
+          <p>Describe your vision in plain English. Specify character archetypes, sci-fi vehicles, mechanical props, or architectural elements, and watch the AI sculpt geometry.</p>
+        </div>
+
+        <!-- Card 2: Photo Reference -->
+        <div class="bento-card">
+          <div class="bento-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <h3>02. Photo to 3D</h3>
+          <p>Snap a photo of a physical figurine, an everyday object, or upload concept art from your gallery to construct an accurate 3D mesh with matched color textures.</p>
+        </div>
+
+        <!-- Card 3: 2D Sketch -->
+        <div class="bento-card">
+          <div class="bento-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>03. Sketch to 3D</h3>
+          <p>Hand-drawn line drawings on paper or in a drawing app become solid 3D geometry with calculated depth and volume contours.</p>
+        </div>
+
+        <!-- Card 4 (Wide): 3D Printing & Manifold Export -->
+        <div class="bento-card bento-card-wide">
+          <div class="bento-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          </div>
+          <h3>Watertight Manifold Geometry Built for 3D Printing</h3>
+          <p>
+            Unlike typical AI meshes plagued by non-manifold edges, inverted normals, and hollow shells, Printable outputs clean topology ready to slice in UltiMaker Cura, Bambu Studio, or PrusaSlicer. Export in universal GLB and transfer straight to your 3D printer.
+          </p>
+        </div>
+
+        <!-- Card 5: Guest Mode & Cloud Sync -->
+        <div class="bento-card">
+          <div class="bento-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>Zero-Friction Guest Mode</h3>
+          <p>Start generating immediately without tedious signup forms. Your projects and generation credits are securely synced to your device identifier.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         DOWNLOAD CALL TO ACTION BANNER
+         ========================================== -->
+    <section class="wrap" id="download">
+      <div class="download-cta-box">
+        <span class="eyebrow" style="background: rgba(158, 248, 173, 0.15); padding: 0.35rem 0.9rem; border-radius: 999px;">
+          Available for Android
+        </span>
+        <h2>Ready to Build in 3D?</h2>
+        <p>
+          Download Printable today and start transforming your ideas into physical 3D prints, game assets, and character models.
+        </p>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+          <a class="play-store-btn" href="https://play.google.com" data-play-store target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <div class="play-btn-text">
+              <span class="play-btn-sub">DOWNLOAD FROM</span>
+              <span class="play-btn-title">Google Play</span>
+            </div>
+          </a>
+
+          <a class="button button-secondary" href="contact.html">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Need Help? Contact Support
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <p><strong>Printable</strong> AI 3D Model Generator for Android</p>
+        <small style="color: var(--muted);">&copy; 2026 TechTornix. All rights reserved.</small>
+      </div>
+
+      <!-- Footer Navigation: Home, About, Privacy Policy, Terms & Conditions, Support (Last) -->
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="contact.html" style="color: var(--accent); font-weight: 650;">Support</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

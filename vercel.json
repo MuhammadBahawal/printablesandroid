@@ -1,0 +1,61 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/about",
+      "destination": "/printable/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/printable/contact.html"
+    },
+    {
+      "source": "/support",
+      "destination": "/printable/contact.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/printable/privacy.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/printable/terms.html"
+    },
+    {
+      "source": "/thanks",
+      "destination": "/printable/thanks.html"
+    },
+    {
+      "source": "/assets/(.*)",
+      "destination": "/printable/assets/$1"
+    },
+    {
+      "source": "/site.css",
+      "destination": "/printable/site.css"
+    },
+    {
+      "source": "/site.js",
+      "destination": "/printable/site.js"
+    },
+    {
+      "source": "/site-config.js",
+      "destination": "/printable/site-config.js"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/printable/index.html"
+    },
+    {
+      "source": "/",
+      "destination": "/printable/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/api/index.js"
+    }
+  ]
+}
